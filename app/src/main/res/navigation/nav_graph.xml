@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.example.mobiletodoapp.HomeScreen"
+        android:label="HomeScreen"
+        tools:layout="@layout/screen_home">
+        <action
+            android:id="@+id/action_homeScreen_to_editScreen"
+            app:destination="@id/editScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_addScreen"
+            app:destination="@id/addScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/editScreen"
+        android:name="com.example.mobiletodoapp.EditScreen"
+        android:label="EditScreen"
+        tools:layout="@layout/screen_edit">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="body"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addScreen"
+        android:name="com.example.mobiletodoapp.AddScreen"
+        android:label="AddScreen"
+        tools:layout="@layout/screen_add"/>
+</navigation>
